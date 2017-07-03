@@ -10,17 +10,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
  * @author: Cheng.Zhenyu
  * @Date: 2017-06-13 14:56:21
  * @Last Modified by: Cheng.Zhenyu
- * @Last Modified time: 2017-06-13 16:06:54
+ * @Last Modified time: 2017-07-03 11:49:43
  */
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var hero_detail_component_1 = require("./hero-detail.component");
 var heroes_component_1 = require("./heroes.component");
 var hero_service_1 = require("./hero.service");
 var dashboard_component_1 = require("./dashboard.component");
 var app_routing_moule_1 = require("./app-routing.moule");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_data_service_1 = require("./in-memory-data.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,6 +34,8 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
+            http_1.HttpModule,
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
             app_routing_moule_1.AppRoutingModule
         ],
         declarations: [
